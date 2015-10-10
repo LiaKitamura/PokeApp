@@ -10,24 +10,22 @@ $(document).ready(function(){                                                   
       type: "GET",                                                                              // http action type through api
       success: function(data){                                        
         var $pokeName = data.name;                                                              // Grabs the Pokemon name from list and displays them in the ul element in the teams#new.html.erb  
-        var $pokeTypes = data.types
-        var $pokeList = $('#poke_list');
-        $('<li class= "poke-list-data">' + 
-          $pokeName + 
-          " " +
-          '<span class="poke-type-data">' +
-          $pokeTypes[0].name +                                                                 // accesses the first type of the pokeTypes array and calls the name
-          '</span>' +
-          " " +
-          '</li>').appendTo($pokeList);                                                        // list element is being appended to the poke_list in the html. 
+        var $pokeList = $('#poke_list');                                                        // identifies the list that the data will be appended to.
+        var $pokeType1 = data.types[0].name                                                     // Grabs the name for the first type that the pokemon posesses. 
+        //var $pokeType2 = data.types[1].name                                                    // Grabs the name for the second type that the pokemon posesses. 
+
+        $('<tr class= "poke-list-data">' + 
+          '<td>' + $pokeName + '</td>' +
+          '<td>' + $pokeType1 + '</td>' +
+          // '<td>' + $pokeType1 + "," + " " + $pokeType2 + '</td>' +
+          '<td>' + '<button>' + "Add" + '</button>' + '</td>' +
+          '</tr>').appendTo($pokeList);                                                        // all of the html elements are being appended to the poke_list in the html. 
       }, 
       error: function(data){                                                                    
         console.log("oh-nos!");                                                                // console logs oh-nos if there is an error 
       }
     });    //$.ajax end
   }       // for loop end
-
-
 
 });  // document.ready end  
 

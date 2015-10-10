@@ -1,10 +1,20 @@
 Teams#New
 <div>
-  <ul id="poke_list">
-  </ul>
+  <table>
+    <thead>
+      <tr>
+        <td class="poke-header"><h3>Name</h3></td>
+        <td class="poke-header"><h3>Type</h3></td>
+        <td class="poke-header"><h3>Add to Team</h3></td>
+      </tr> 
+    </thead>
+    <tbody id="poke_list">
+      // ajax calls append list of pokemon and types with add button into this table body
+    </tbody>
+  </table>
 </div>  
 
-<form action="/team" method="POST" id="new_team_button">
+<!-- <form action="/team" method="POST" id="new_team_button">
   <input type="text" name="team_name">
 
-</form>
+</form> -->
